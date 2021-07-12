@@ -1,0 +1,34 @@
+@model List<Hobby>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <p>Hello @ViewBag.User.FirstName! - <a asp-action="LogOut" asp-controller="Home">LogOut</a></p>
+    <hr> 
+    <div class="text-center">
+    <h1 class="display-4">Hobbies </h1>
+    </div>
+    <table class="table table-striped table-light">
+        <thead>
+            <th>Name</th>
+            <th>Enthusiasts</th>
+        </thead>
+        @foreach (var hobby in Model)
+        {
+            <tr>
+                <td><a asp-action="Hobbies" asp-controller="Exam" asp-route-hobbyId="@hobby.HobbyId">@hobby.Name</a></td>
+                <td>@hobby.Hlikes.Count</td>
+            </tr>
+        }
+    </table>
+    <a asp-action="New" asp-controller="Exam">Create a Hobby</a>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+@* ViewBag.User *@
+@model Hobby
+<p>Hello @ViewBag.User.FirstName! <a asp-action="Dashboard" asp-controller="Exam">Dashboard</a> - <a
+        asp-action="LogOut" asp-controller="Home">LogOut</a></p>
+<hr>
+<h1>Edit a Hobby</h1>
+<form asp-action="Update" asp-controller="Exam" method="POST">
+    <partial name="Form"></partial>
+</form>

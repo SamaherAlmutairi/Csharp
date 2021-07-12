@@ -1,0 +1,13 @@
+@model Hobby
+<div>
+    <label asp-for="Name"></label>
+    <input asp-for="Name" /><br />
+    <span class="text-danger" asp-validation-for="Name"></span>
+</div>
+<div>
+    <label asp-for="Description"></label>
+    <input asp-for="Description" /><br />
+    <span class="text-danger" asp-validation-for="Description"></span>
+</div>
+
+<button type="submit">submit </button>
